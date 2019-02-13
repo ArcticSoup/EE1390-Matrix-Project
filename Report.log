@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2018.11.2)  13 FEB 2019 22:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2018.11.2)  14 FEB 2019 00:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1121,7 +1121,51 @@ ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./Report.nav) [1
 
-] [2
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+)
+[2
+
+] [3
+
+] [4
+
+] [5
+
+] [6
+
+] [7
+
+] [8
+
+] [9
+
+] [10
+
+] [11
+
+] [12
+
+] [13
+
+] [14
+
+] [15
 
 ]
 \tf@nav=\write6
@@ -1133,21 +1177,21 @@ Dictionary: translator-theorem-dictionary, Language: English
 \tf@snm=\write8
 \openout8 = `Report.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 23.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 23.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (./Report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 23.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 23.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 110.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16573 strings out of 492983
- 311863 string characters out of 6134922
- 396178 words of memory out of 5000000
- 19788 multiletter control sequences out of 15000+600000
- 5452 words of font info for 20 fonts, out of 8000000 for 9000
+ 16689 strings out of 492983
+ 314677 string characters out of 6134922
+ 405177 words of memory out of 5000000
+ 19883 multiletter control sequences out of 15000+600000
+ 10390 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,55p,773b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,14n,55p,773b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Report.dvi (2 pages, 25316 bytes).
+Output written on Report.dvi (15 pages, 162076 bytes).

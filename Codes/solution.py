@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# sincegiven equation is 2x - 3y = 1
+# since given equation is 2x - 3y = 1
 norm_vec = np.array([2, -3])
 p = 1
 
@@ -42,7 +42,7 @@ plot_circle(centre, radius)
 draw_line(norm_vec,p)
 
 # add all points lying oposite to centre and inside the circle
-answer = sum([(np.matmul(norm_vec,k) - p) > 0 and (k[0]**2 + k[1]**2 < 6)for k in ([points[0,i], points[1,i]] for i in range(0,5))])
+answer = sum([(np.matmul(norm_vec,k) - p) > 0 and (k[0]**2 + k[1]**2 < 6)for k in ([points[0,i], points[1,i]] for i in range(0,4))])
 
 print(answer)
 

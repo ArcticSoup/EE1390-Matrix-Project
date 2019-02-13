@@ -23,8 +23,8 @@ def draw_line(n,p):
 
 	# fill colour on the shorter side, which can be decided using
 	# the centre of the circle
-	plt.fill_between(x,y,np.full(30, 1000 if (np.matmul(n,centre) - p) > 0 else -1000), color = 'red')
-	plt.plot(x,y)
+	plt.fill_between(x,y,np.full(30, 1000 if (np.matmul(n,centre) - p) > 0 else -1000), color = 'yellow')
+	plt.plot(x,y, color = 'red')
 
 # utility function to plot a circle using centre and radius
 def plot_circle(centre, radius):
@@ -33,7 +33,7 @@ def plot_circle(centre, radius):
 	plt.axis('scaled')
 
 # plot all the given points and the centre of the circle
-plt.plot(points[0,:], points[1,:],'o')
+plt.plot(points[0,:], points[1,:],'o', color = 'blue')
 
 # plot the boundary of th given circular region given
 plot_circle(centre, radius)
@@ -47,6 +47,7 @@ answer = sum([(np.matmul(norm_vec,k) - p) > 0 and (k[0]**2 + k[1]**2 < 6)for k i
 print(answer)
 
 plt.grid()
+plt.savefig('../Figures/graph.jpg')
 plt.show()
 
 

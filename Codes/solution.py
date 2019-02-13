@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# sincegiven equation is 2x - 3y = 1
+# since given equation is 2x - 3y = 1
 norm_vec = np.array([2, -3])
 p = 1
 
@@ -23,7 +23,15 @@ def draw_line(n,p):
 
 	# fill colour on the shorter side, which can be decided using
 	# the centre of the circle
-	plt.fill_between(x,y,np.full(30, 1000 if (np.matmul(n,centre) - p) > 0 else -1000), color = 'yellow')
+
+	# We can find the side using matrix multiplication of the centre of the circle,
+	# and the normal vector
+
+	if np.matmul(n,centre) - p > 0:
+		lower_bound = 1000
+	else:
+		lower_bound = -1000
+	plt.fill_between(x,y,np.full(30, lower_bound), color = 'yellow')
 	plt.plot(x,y, color = 'red')
 
 # utility function to plot a circle using centre and radius
@@ -41,8 +49,19 @@ plot_circle(centre, radius)
 # plot the given line
 draw_line(norm_vec,p)
 
-# add all points lying oposite to centre and inside the circle
-answer = sum([(np.matmul(norm_vec,k) - p) > 0 and (k[0]**2 + k[1]**2 < 6)for k in ([points[0,i], points[1,i]] for i in range(0,5))])
+point_set = np.vstack((np.array([points[0,0],points[1,0]]), np.array([points[0,1],points[1,1]]),
+	np.array([points[0,2],points[1,2]]), np.array([points[0,3],points[1,3]]))).T
+
+square_sum = np.matmul(point_set.T, point_set)
+
+position_relative_to_line = np.matmul(norm_vec,point_set) - p
+
+answer_array = np.array([(square_sum[i,i] < 6 and position_relative_to_line[i] > 0) for i in range(0,4)])
+
+
+print(answer_array)
+
+answer = sum(answer_array)
 
 print(answer)
 

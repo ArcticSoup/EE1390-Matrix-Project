@@ -31,18 +31,22 @@ def draw_line(n,p):
 		lower_bound = 1000
 	else:
 		lower_bound = -1000
-	plt.fill_between(x,y,np.full(30, lower_bound), color = 'yellow')
-	plt.plot(x,y, color = 'red')
+	plt.fill_between(x,y,np.full(30, lower_bound), color = 'pink', label = '2x - 3y - 1 > 0')
+	plt.plot(x,y, color = 'cyan', linewidth=2)
 
 # utility function to plot a circle using centre and radius
 def plot_circle(centre, radius):
-	circle = plt.Circle(centre, radius, fill=None)
+	circle = plt.Circle(centre, radius, fill='pink', alpha = 0.7, label = 'x^2 + y^2 <= 6')
 	plt.gca().add_patch(circle)
-	plt.axis('scaled')
+	plt.axis(xmin = -4.0,xmax = 4.0,ymin = -3.5, ymax = 3.5)
 
 # plot all the given points and the centre of the circle
-plt.plot(points[0,:], points[1,:],'o', color = 'blue')
-
+letters = ['A', 'B', 'C', 'D']
+for i in range(0,4):
+	plt.plot(points[0,i], points[1,i],'o', color = 'blue')
+	plt.text(points[0,i] + 0.1, points[1,i] + 0.1, letters[i])
+plt.plot(points[0,4], points[1,4],'o', color = 'pink')
+plt.text(points[0,4] + 0.05, points[1,4], 'O')
 # plot the boundary of th given circular region given
 plot_circle(centre, radius)
 
@@ -69,6 +73,7 @@ answer = sum(answer_array)
 print(answer)
 
 plt.grid()
+plt.legend()
 plt.savefig('../Figures/graph.eps', format = 'eps', dpi = 1000)
 plt.show()
 

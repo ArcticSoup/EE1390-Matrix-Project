@@ -43,9 +43,9 @@ def plot_circle(centre, radius):
 # plot all the given points and the centre of the circle
 letters = ['A', 'B', 'C', 'D']
 for i in range(0,4):
-	plt.plot(points[0,i], points[1,i],'o', color = 'blue')
+	plt.plot(points[0,i], points[1,i],'o', color = 'black')
 	plt.text(points[0,i] + 0.1, points[1,i] + 0.1, letters[i])
-plt.plot(points[0,4], points[1,4],'o', color = 'pink')
+plt.plot(points[0,4], points[1,4],'o', color = 'cyan')
 plt.text(points[0,4] + 0.05, points[1,4], 'O')
 # plot the boundary of th given circular region given
 plot_circle(centre, radius)

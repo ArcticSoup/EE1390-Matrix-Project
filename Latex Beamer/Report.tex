@@ -41,7 +41,8 @@ The steps we took to solve this problem were:
 
 \begin{frame}
 \frametitle{Matrix Transformation}
-Consider a matrix $S_o$ with all the points in the set $S$ stacked as follows: 
+\begin{itemize}
+\item<1-> Consider a matrix $S_o$ with all the points in the set $S$ stacked as follows: 
 \[
  S_o =
 \begin{bmatrix}
@@ -50,16 +51,14 @@ Consider a matrix $S_o$ with all the points in the set $S$ stacked as follows:
     
 \end{bmatrix}
 \]
-\\~\\
-Now the normal vector to the given line is as follows:
+\item<2-> Now the normal vector to the given line is as follows:
 \[
  N =
 \begin{bmatrix}
     2  & -3
 \end{bmatrix}
 \]
-
-The matrix
+\item<3-> The matrix
 \[
  P =
 \begin{bmatrix}
@@ -67,14 +66,18 @@ The matrix
 \end{bmatrix}
 \]
 
-and the matrix
+\item<4-> and the matrix
 \[
  O =
 \begin{bmatrix}
     0  & 0
 \end{bmatrix}
 \]
+\item<5->The equation of a line is $N*x = p$ where $x$ is a 2 dimensional column vector and p is a constant.
+\end{itemize}
+
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Matrix Transformation Contd}

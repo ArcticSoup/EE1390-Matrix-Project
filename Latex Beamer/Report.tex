@@ -1,6 +1,8 @@
 \documentclass[xcolor=dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{bm}
 \usepackage{graphicx}
 \setbeamertemplate{blocks}[rounded][shadow=true]
 %\setbeamertemplate{title page}[rounded=true,shadow=true]
@@ -22,7 +24,7 @@
 \begin{frame}
 \frametitle{Problem}
 The straight line 2$x$ - 3$y$ = 1 divides the circular region $x^{2} + y^{2}$ $\leqslant$ 6 into two parts. If\\~\\
-$S$ = $\Bigg \lbrace \bigg(2,$\(\frac{3}{4}\)$\bigg),\bigg($\(\frac{5}{2}\)$,$\(\frac{3}{4}\)$\bigg),\bigg($\(\frac{1}{4}\)$,$\(-\frac{1}{4}\)$\bigg),\bigg($\(\frac{1}{8}\)$,$\(\frac{1}{4}\)$\bigg)\Bigg\rbrace$
+$\boldsymbol{S}$ = $\Bigg \lbrace \bigg(2,$\(\frac{3}{4}\)$\bigg),\bigg($\(\frac{5}{2}\)$,$\(\frac{3}{4}\)$\bigg),\bigg($\(\frac{1}{4}\)$,$\(-\frac{1}{4}\)$\bigg),\bigg($\(\frac{1}{8}\)$,$\(\frac{1}{4}\)$\bigg)\Bigg\rbrace$
 \\~\\
 then find the number of points in $S$ lying inside the smaller part of the circle.
 \end{frame}
@@ -33,7 +35,7 @@ The steps we took to solve this problem were:
 \begin{itemize}
  \item<1-> Find the centre of the given circle(in this case it is (0,0))
  \item<2-> Find position of centre with respect to the line given
- \item<3-> Find position of each point in $S$ with respect to the line
+ \item<3-> Find position of each point in $\boldsymbol{S}$ with respect to the line
  \item<4-> Find the points which satisfy our condition using the constraints found in above steps
 \end{itemize}
 
@@ -42,9 +44,9 @@ The steps we took to solve this problem were:
 \begin{frame}
 \frametitle{Matrix Transformation}
 \begin{itemize}
-\item<1-> Consider a matrix $S_o$ with all the points in the set $S$ stacked as follows: 
+\item<1-> Consider a matrix $\boldsymbol{S_o}$ with all the points in the set $S$ stacked as follows: 
 \[
- S_o =
+ \boldsymbol{S_o} =
 \begin{bmatrix}
     2  & $\(\frac{5}{2}\)$ & $\(\frac{1}{4}\)$ & $\(\frac{1}{8}\)$ \\~\\
     $\(\frac{3}{4}\)$ & $\(\frac{3}{4}\)$ & $\(-\frac{1}{4}\)$ &$\(\frac{1}{4}\)$\\
@@ -53,14 +55,14 @@ The steps we took to solve this problem were:
 \]
 \item<2-> Now the normal vector to the given line is as follows:
 \[
- N =
+ \boldsymbol{N} =
 \begin{bmatrix}
     2  & -3
 \end{bmatrix}
 \]
 \item<3-> The matrix
 \[
- P =
+ \boldsymbol{P} =
 \begin{bmatrix}
     1 & 1 & 1 & 1
 \end{bmatrix}
@@ -68,24 +70,25 @@ The steps we took to solve this problem were:
 
 \item<4-> and the matrix
 \[
- O =
+ \boldsymbol{O} =
 \begin{bmatrix}
     0  & 0
 \end{bmatrix}
 \]
-\item<5->The equation of a line is $N*x = p$ where $x$ is a 2 dimensional column vector and p is a constant.
+\item<5->The equation of a line is $\boldsymbol{N}*\boldsymbol{x} = p$ where $x$ is a 2 dimensional column vector and p is a constant.
 \end{itemize}
 
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Matrix Transformation Contd}
+\frametitle{Matrix Transformation Continued}
 Our original problem now transforms as follows:
 \begin{itemize}
- \item<1-> Let $M = N*S_o$ 
- \item<2-> We can see that $N*O^{T} - 1 = -1$ this is the relative position of the centre with respect to the line.
- \item<3-> Find the number of elements in $M-P > 0$ and $(S_o^{T}*S_o)_{ii}\leqslant 6$
+ \item<1-> The equation of our line is $\boldsymbol{N}*\boldsymbol{x} = 1$ 
+ \item<2-> We can see that $\boldsymbol{N}*\boldsymbol{O^{T}} - 1 = -1$ this is the relative position of the centre with respect to the line.
+ \item<3->Let $\boldsymbol{M} = \boldsymbol{N}*\boldsymbol{S_o}$
+ \item<4-> Find the number of elements in $\boldsymbol{M}-\boldsymbol{P} > 0$ and $(\boldsymbol{S_o^{T}}*\boldsymbol{S_o})_{ii}\leqslant 6$
 \end{itemize}
 
 \end{frame}
@@ -93,22 +96,22 @@ Our original problem now transforms as follows:
 \begin{frame}
 \frametitle{Solution}
 \begin{itemize}
- \item<1-> $S_o^{T}*S_o$ will give us a 4*4 matrix with the diagonal elements being the values of $x^{2} + y^{2}$ for the 4 points, hence we will consider only the diagonal entries. 
- \item<2-> Calculating $M-P$ we get:
+ \item<1-> $\boldsymbol{S_o^{T}}*\boldsymbol{S_o}$ will give us a 4*4 matrix with the diagonal elements being the values of $x^{2} + y^{2}$ for the 4 points, hence we will consider only the diagonal entries. 
+ \item<2-> Calculating $\boldsymbol{M}-\boldsymbol{P}$ we get:
  \[
- M-P =
+ \boldsymbol{M-P} =
 \begin{bmatrix}
     $\(\frac{3}{4}\)$ & $\(\frac{7}{4}\)$ & $\(\frac{1}{4}\)$ & $\(-\frac{3}{2}\)$
 \end{bmatrix}
 \] 
- \item<3-> The diagonal elements of $S_o^{T}*S_o$ are:
+ \item<3-> The diagonal elements of $\boldsymbol{S_o^{T}*S_o}$ are:
   \[
- (S_o^{T}*S_o)_{ii} =
+ \boldsymbol{(S_o^{T}*S_o)}_{ii} =
 \begin{bmatrix}
     $\(\frac{73}{16}\)$ & $\(\frac{109}{16}\)$ & $\(\frac{1}{8}\)$ & $\(\frac{1}{32}\)$
 \end{bmatrix}
 \] 
-\item<4-> Now the only points which satisfy the conditions $M-P > 0$ and $(S_o^{T}*S_o)_{ii}\leqslant 6$ are $\bigg(2,$\(\frac{3}{4}\)$\bigg)$ and $\bigg($\(\frac{1}{4}\)$,$\(-\frac{1}{4}\)$\bigg)$
+\item<4-> Now the only points which satisfy the conditions $\boldsymbol{M-P} > 0$ and $\boldsymbol{(S_o^{T}*S_o)}_{ii}\leqslant 6$ are $\bigg(2,$\(\frac{3}{4}\)$\bigg)$ and $\bigg($\(\frac{1}{4}\)$,$\(-\frac{1}{4}\)$\bigg)$
 \item<5->Hence the number of points lying in the smaller region of the circle is 2.
 \end{itemize}
 
